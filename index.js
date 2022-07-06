@@ -18,10 +18,10 @@ const solutions = generateRandomSolution();
 
 console.log(util.inspect(solutions, false, 2, true));
 solutions.sort((a, b) => a.cost - b.cost);
-console.log(solutions[0]);
+console.log(util.inspect(solutions[0], false, 1, true));
 
 function generateRandomSolution() {
-	const nbSol = 10;
+	const nbSol = 1000;
 	const solutions = [];
 
 	for (let i = 0; i < nbSol; i++) {
