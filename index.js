@@ -1,10 +1,5 @@
 const util = require('util');
-const airports = require('./airports.json'); //(with path)
-const data = require('./data.json'); //(with path)
-
-const origins = ['TXL', 'CDG', 'MRS', 'LYS', 'MAN', 'BIO', 'JFK', 'TUN', 'MXP'];
-const arrivalTime = new Date('2010-07-27T17:00:00');
-const minArrivalTime = new Date('2010-07-27T00:00:00');
+const data = require('./data.json');
 
 const flights = data.reduce((all,curr) => ({...all, [curr.origin]: all[curr.origin] ? [...all[curr.origin], curr]: [curr]}), {});
 const backFlights = flights.LHR.reduce((all,curr) => ({...all, [curr.destination]: all[curr.destination] ? [...all[curr.destination], curr]: [curr]}), {});
