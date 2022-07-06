@@ -17,3 +17,10 @@ function generateRandomSolution() {
 	const nbSol = 1000;
 ...
 ```
+Change the int value in the console log to show more details :  
+``` 
+//----------------------------------->here |
+console.log(util.inspect(solutions, false, 2, true));
+solutions.sort((a, b) => a.cost - b.cost);
+//-------------------------------------->here |
+console.log(util.inspect(solutions[0], false, 1, true));
